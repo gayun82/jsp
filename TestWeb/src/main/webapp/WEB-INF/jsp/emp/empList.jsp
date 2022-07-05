@@ -1,4 +1,4 @@
-<%@page import="co.micol.prj.EmpVO"%>
+<%@page import="co.micol.prj.emp.EmpVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -7,11 +7,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>jstl</title>
+<title>empList</title>
 </head>
 <body>
 <h3>사원목록</h3>
-<a href="empInsert">사원등록</a><!-- href="http://TestWeb/empInsert" 가능 -->
+<a href="/TestWeb/empInsert">사원등록</a><br><!-- href="http://TestWeb/empInsert" 가능 -->
+<form>
+ 	<input name="departmentId">
+ 	<button>검색</button>
+</form>
+
 	<table>
 		<thead>
 			<tr>
