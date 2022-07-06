@@ -11,9 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 import co.micol.prj.dept.DeptDAO;
 
 //http://localhost/컨텍스트패스
-@WebServlet("/empInsert")
-public class EmpInsertServ extends HttpServlet{
-	//등록페이지로 이동
+@WebServlet("/empUpdate")
+public class EmpUpdateServ extends HttpServlet{
+	//수정페이지로 이동
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -23,8 +23,10 @@ public class EmpInsertServ extends HttpServlet{
 		request.setAttribute("jobs", empDAO.selectJobs());
 		DeptDAO deptDAO = new DeptDAO();
 		request.setAttribute("depts", deptDAO.selectAll());
-		
-		request.getRequestDispatcher("/WEB-INF/jsp/emp/empInsert.jsp")
+		//사번 단건 조회
+		String employeeId = request.getParameter("employeeId");
+		request.setAttribute("emp", empDAO.selectOne(employeeId));
+		request.getRequestDispatcher("/WEB-INF/jsp/emp/empUpdate.jsp")
 			   .forward(request, response);
 	}
 
@@ -44,7 +46,6 @@ public class EmpInsertServ extends HttpServlet{
 		String name = request.getParameter("lastName");
 		String email = request.getParameter("email");
 		String hireDate = request.getParameter("hireDate");
-		String departmentId = request.getParameter("departmentId");
 		String jobId = request.getParameter("jobId");
 		
 		EmpVO vo =new EmpVO();
@@ -55,7 +56,7 @@ public class EmpInsertServ extends HttpServlet{
 		vo.setJobId(jobId);
 		
 		EmpDAO empDAO = new EmpDAO();
-		int cnt = empDAO.insert(vo);
+		int cnt = empDAO.update(vo);
 		System.out.println(cnt +"건등록 완료");
 		
 		response.getWriter()
@@ -63,11 +64,6 @@ public class EmpInsertServ extends HttpServlet{
 		.append(name)
 		.append(email)
 		.append(hireDate)
-		.append(departmentId)
 		.append(jobId);
-		
-		//결화출력
-		//request.getRequestDispatcher("emplist").forward(request, response);
-		response.sendRedirect("empList");
 	}
 }

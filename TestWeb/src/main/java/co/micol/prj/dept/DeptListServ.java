@@ -18,7 +18,7 @@ public class DeptListServ extends HttpServlet {
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		
 		request.setAttribute("list", new DeptDAO().selectAll());
-		request.getRequestDispatcher("/WEB-INF/jsp/dept/deptList.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/jsp/dept/deptList2.jsp").forward(request, response);
 	}
 
 }

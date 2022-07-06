@@ -3,7 +3,6 @@
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -93,11 +92,10 @@ function validateForm(){
  
         <label>부서번호</label>
         	<select name="jobId">
-        <c:forEach items="${jobs}" var="job">
-         <option value="${job.getJobId()}">${job.getJobTitle()}
-        </c:forEach>
-       	 	
-        	
+        <% ArrayList<JobsVO> jobs = (ArrayList<JobsVO>)request.getAttribute("jobs");
+       		 for(JobsVO job : jobs){ %>
+       	 	<option value="<%=job.getJobId()%>"><%=job.getJobTitle()%>
+        	<%} %>
         	</select>
         <br>
         

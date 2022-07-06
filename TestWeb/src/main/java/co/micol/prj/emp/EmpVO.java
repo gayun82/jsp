@@ -6,9 +6,23 @@ public class EmpVO {
 	private String email;
 	private String hireDate;
 	private String jobId;
+	private String salary;
+	private String departmentId;
 	
 	
 	
+	public String getDepartmentId() {
+		return departmentId;
+	}
+	public void setDepartmentId(String departmentId) {
+		this.departmentId = departmentId;
+	}
+	public String getSalary() {
+		return salary;
+	}
+	public void setSalary(String salary) {
+		this.salary = salary;
+	}
 	public String getEmployeeId() {
 		return employeeId;
 	}

@@ -10,6 +10,7 @@
 <title>empList</title>
 </head>
 <body>
+<jsp:include page="/WEB-INF/jsp/header.jsp"></jsp:include>
 <h3>사원목록</h3>
 <a href="/TestWeb/empInsert">사원등록</a><br><!-- href="http://TestWeb/empInsert" 가능 -->
 <form>
@@ -22,15 +23,20 @@
 			<tr>
 				<th>사번</th>
 				<th>이름</th>
-				<th>급여</th>
+				<th>이메일</th>
+				<th>입사일</th>
+				<th>부서</th>
 			</tr>
 		</thead>
 		<tbody>
 		<c:forEach var="vo" items="${list}"><%--for() --%>
 			<tr>
 				<td>${vo.employeeId}</td>
-				<td>${vo.firstName}</td>
-				<td>${vo.salary}</td>
+				<td><a href="empUpdate?employeeId=${vo.employeeId}"> ${vo.lastName}</a></td>
+				<td>${vo.email}</td>
+				<td>${vo.hireDate}</td>
+				<td>${vo.departmentId}</td>
+				<td>${vo.jobId}</td>
 				<td></td>
 			</tr>
 			</c:forEach>	

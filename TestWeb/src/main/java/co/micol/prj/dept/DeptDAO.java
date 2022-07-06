@@ -14,7 +14,6 @@ public class DeptDAO extends DAO {
 		try {
 			getConnect();
 			psmt = conn.prepareStatement(sql);
-		
 			rs=psmt.executeQuery();
 			
 			while (rs.next()) { // 다음레코드로 이동
