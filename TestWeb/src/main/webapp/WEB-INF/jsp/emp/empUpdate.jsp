@@ -72,7 +72,7 @@ function validateForm(){
 
         <label for="employeeId">사원번호</label>
         <input type="number" name="employeeId" id="employeeId" readonly="readonly" value="<%=vo.getEmployeeId()%>"><br>
-        <!--파라메타-->
+        <!--파라메타-->																	 <%--  ${vo.getEmployeeId()} --%>
         <label for="lastName">이름</label>
         <input type="text" name="lastName" id="lastName" value="<%=vo.getLastName()%>"><br>
 

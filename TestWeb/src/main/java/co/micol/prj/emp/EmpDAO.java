@@ -15,7 +15,7 @@ public class EmpDAO extends DAO {// 기본뼈대 외우기
 		try {
 			getConnect();
 			psmt = conn.prepareStatement(sql);
-			rs = psmt.executeQuery();
+			rs = psmt.executeQuery();//result set  
 			while (rs.next()) {
 				JobsVO vo = new JobsVO();
 				vo.setJobId(rs.getString("job_id"));
@@ -80,7 +80,7 @@ public class EmpDAO extends DAO {// 기본뼈대 외우기
 		EmpVO vo = new EmpVO();
 
 		getConnect();
-		String sql = "select * from employees where employee_id = ?";
+		String sql = "select * from employees where employee_id = ?";//?는 외부에서 전달하는값
 		try {
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, employeeId);
