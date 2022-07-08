@@ -18,27 +18,27 @@
 					<table border="1">
 						<tr>
 							<th width="150">아이디</th>
-							<th width="250"><input type="text" id="memberId"
-								name="memberId" size="20">&nbsp; <input type="hidden"
-								id="checkId" value="No">
+							<td width="250">
+							<input type="text" id="memberId" name="memberId" size="20">&nbsp;
+							<input type="hidden" id="checkId" value="No">
 								<button type="button" id="btn" onclick="idCheck()">중복체크</button>
 							</td>
 						</tr>
 						<tr>
 							<th width="150">패스워드</th>
-							<th width="250"><input type="password" id="memberPassword"
+							<td width="250"><input type="password" id="memberPassword"
 								name="memberPassword" size="20">
 							</td>
 						</tr>
 						<tr>
 							<th width="150">패스워드 확인</th>
-							<th width="250"><input type="password" id="password"
+							<td width="250"><input type="password" id="password"
 								name="password" size="20">
 							</td>
 						</tr>
 						<tr>
 							<th width="150">이름</th>
-							<th width="250"><input type="text" id="memberName"
+							<td width="250"><input type="text" id="memberName"
 								name="memberName" size="20">
 							</td>
 						</tr>
